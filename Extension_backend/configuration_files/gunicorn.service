@@ -1,0 +1,21 @@
+[Unit]
+
+Description=flaskapp
+
+After=network.target
+
+
+
+[Service]
+
+User=deployer
+
+Restart=on-failure
+
+WorkingDirectory=/home/deployer/ppi/
+
+ExecStart=/home/deployer/ppi/ppienv/bin/gunicorn -c /home/deployer/ppi/gunicorn.conf.py backend:app
+
+[Install]
+
+WantedBy=multi-user.target

@@ -1,0 +1,96 @@
+<!--Developed by Shushi Luo-->
+<!--Structure pop-up page of the extension to display the information panel that websites collect and the user setting panel.-->
+
+<!DOCTYPE html>
+  <title>Privacy Icon</title>
+  <html>
+    <head>
+        <base target="_blank">
+        <link rel="stylesheet" href="Privacy-Icons-Regular.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+        <style>
+          /* style setting */
+          body{
+            /*font-family: "Roboto", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";*/
+
+            font-feature-settings: "liga";
+            background-color:#ffffff !important;
+            border: 0px #f2f2f2;
+          }
+          textarea{
+            min-height: 150px;
+            min-width: 250px;
+            box-shadow: 1px 1px 5px grey;
+            border:none;
+          }
+
+      
+          subtitle{
+            font-weight:bold;
+            color: #000000c0;
+            font-size: large;
+            
+          }
+
+          .container{
+            width: 400px;
+            height:350px;
+            vertical-align: middle;
+
+            }
+          .website{
+            float:left;
+            width:50%;
+            height: 350px;
+            background:#c9f1e2;
+            overflow-y:scroll;
+            vertical-align: middle;
+            }
+         .user{
+            /*margin-left:50%;*/
+            float: left;
+            width:50%;
+            height: 350px;
+            overflow-y:scroll;
+            background:#f2fbf8;
+            vertical-align: middle;
+            }
+
+        </style>
+    </head>
+    <body>
+      <div  class="container">
+          <div class="col-md-6 text-center">
+                <div style="background-color: #ffffff; "> 
+                  <img src="Logo-privacy-Icons_2x-1.png" style="width:200px;"></img>
+                </div>
+                <subtitle name="sb" method="POST" style="float:left; margin-left:8px;">Website Settings</subtitle>
+                <subtitle style="float:right; margin-right:20px;">Your Preference</subtitle> 
+                <div class="website" id="webpanel">
+                  
+                  <div id="load"></div>
+                </div>
+                
+                <div class="user" id="userpanel">  
+                    
+                  <!--form action = http://127.0.0.1:8000/popup method =post name = f1>       
+                  <textarea name="TargetData" rows="1" cols="5" placeholder="Your Text Here .."></textarea>
+                  </form-->
+                </div>
+                
+                <br />
+                <br />
+                
+                <button id="setting" type="button"  style="border-style:3px; border-color: #9c9a9aca; margin: 10px; padding:6px;background-color: #ffffff;border-radius: 15px; color: #000000d9; font-weight: lighter;">
+                  Change My Preference
+               </button><br />
+
+         </div>
+      </div>
+      <script src="jquery-2.2.js"></script>
+      <script src="popup.js"></script>
+
+    </body>
+</html>

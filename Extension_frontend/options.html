@@ -1,0 +1,214 @@
+<!--Created by Muyao Dong-->
+<!--Structure the page where users can modify their privacy preferences to display the provided choices.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <base target="_blank">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="jquery-2.2.js"></script>
+        <style>
+            /* Style The Dropdown Button */
+            body{
+              display: flex;
+              flex-direction: column;
+              flex: 1 0 auto;
+              justify-content: space-between;
+              align-items: top;
+              font-family: "Roboto", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";
+              font-feature-settings: "liga";
+              background-color:#e2ece8;
+              border: 1px #f2f2f2;
+            }
+            .header {
+              color: rgb(145, 169, 147);
+              border-top: 1px solid #2f1988;
+              border-bottom: 1px solid #2f1988;
+          }
+  
+          .header ul {
+              margin: 0;
+              padding: 0;
+              list-style: none;
+              padding-left: 1.5em;
+          }
+  
+          .header li {
+              display: inline-block;
+              background: rgba(243, 248, 243, 0.7);
+              cursor: pointer;
+              padding: 1em;
+              margin: 0;
+              transition: background 0.20s ease-in-out;
+          }
+  
+          .header li:hover {
+              background: rgba(187, 214, 190, 0.7);
+          }
+  
+          .header li.active {
+              opacity: 1 !important;
+              background: rgba(187, 214, 190, 0.7);
+          }
+  
+          .header li.debug {
+              position: absolute;
+              right: 0;
+              opacity: 0.01;
+          }
+  
+          .prehead {
+              position: relative;
+              padding: 1em;
+              color: white;
+              font-family: sans-serif;
+              display: flex;
+              margin-bottom: 0em;
+              background: rgb(145, 169, 147);
+          }
+  
+          .prehead .title {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+          }
+  
+          .prehead h1 {
+              margin-top: 0;
+              margin-bottom: 0;
+              line-height: 1.2em;
+          }
+  
+          .prehead h2 {
+              margin-top: 0;
+              margin-bottom: 0;
+              opacity: 0.8;
+              font-weight: normal;
+              font-size: 1em;
+          }
+  
+          .prehead img {
+              height: 5em;
+              margin-right: 1em;
+          }
+            
+            .set{
+              position:relative;
+              margin: auto;
+              width: 500px;
+              background:#f3f8f4;
+              border:1px dashed  #4b6e61
+              }
+            .title{
+                text-align: center; 
+                width: 300px; 
+                background-color: #4b6e61;
+                box-shadow: 1px 1px 5px grey; 
+                color:white;
+                padding: 6px;
+                position:relative;
+                margin: auto
+            }
+            .subtitle{
+                text-align: left; 
+                color:rgb(47, 55, 49);
+                padding: 6px;
+                position:relative;
+                margin: auto
+            }
+
+          </style>
+    </head>
+    <body>
+        <h4 class="title"> 
+            Set Your Privacy Preference
+        </h4>
+        <div class="set" name="type-of-personal-data">
+            <h4 class="subtitle"> 
+                Type of personal data
+            </h4>
+            <input type="checkbox" name="data" id="ld" value="Location Data"><label for="ld">Location Data</label><br />
+            <small><i>Allow websties to process your location data.</i></small><br />
+            <input type="checkbox" name="data" id="gpd" value="General Data"><label for="gpd">General Data</label><br />
+            <small><i>Allow websties to process general personal data about you, such as your name and contact details.</i></small><br />
+            <input type="checkbox" name="data" id="hd" value="Health Data"><label for="hd">Health Data</label><br />
+            <small><i>Allow websties to process your health data.</i></small><br />
+            <input type="checkbox" name="data" id="fd" value="Financial Data"><label for="fd">Financial Data</label><br />
+            <small><i>Allow websties to process your financial data.</i></small><br />
+            <input type="checkbox" name="data" id="bd" value="Biometric Data"><label for="bd">Biometric Data</label><br />
+            <small><i>Allow websties to process your biometric data.</i></small><br />
+            <input type="checkbox" name="data" id="p" value="Intimate Data"><label for="p">Intimate Data</label><br />
+            <small><i>Allow websties to process intimate data about you.</i></small><br />
+        </div>
+
+        <div class="set" name="source-of-personal-data">
+            <h4 class="subtitle"> 
+                Source of personal data
+            </h4>
+            <input type="checkbox" name="data" id="leave" value="Provided Data"><label for="leave">Provided Data</label><br />
+            <small><i>Allow websties to process personal data that you provide to us.</i></small><br />
+            <input type="checkbox" name="data" id="collected" value="Collected Data"><label for="collected">Collected Data</label><br />
+            <small><i>Allow websties to process personal data that we collect about you.</i></small><br />
+            <input type="checkbox" name="data" id="recieved" value="Recieved Data"><label for="recieved">Recieved Data</label><br />
+            <small><i>Allow websties to process personal data about you that we receive from third parties.</i></small><br />
+        </div>
+
+        <div class="set" name="purpose-of-processing">
+            <h4 class="subtitle"> 
+                Purpose of processing
+            </h4>
+            <input type="checkbox" name="data" id="market" value="Marketing"><label for="market">Marketing</label><br />
+            <small><i>Allow websties to use your personal data for marketing and advertising.</i></small><br />
+            <input type="checkbox" name="data" id="pd" value="Product Development"><label for="pd">Product Development</label><br />
+            <small><i>Allow websties to use your personal data for the development and improvement of products and services.</i></small><br />
+            <input type="checkbox" name="data" id="op" value="Other"><label for="op">Other Purposes</label><br />
+            <small><i>Allow websties to use your personal data for other purposes without direct connection with the core service.</i></small><br />
+        </div>
+            
+        <div class="set" name="Special-edits">
+            <h4 class="subtitle"> 
+                Special edits
+            </h4>
+            <input type="checkbox" name="data" id="ad" value="Automatic Decisions-making"><label for="ad">Automatic Decision-Making</label><br />
+            <small><i>Allow websties to make significant decisions based on fully automated processing.</i></small><br />
+            <input type="checkbox" name="data" id="profile" value="Profiling"><label for="profile">Profiling</label><br />
+            <small><i>Allow websties to analyse your behaviour and make assumptions about your interests and preferences.</i></small><br />
+        </div>
+        
+        <div class="set" name="Transfer-to-third-parties">
+            <h4 class="subtitle"> 
+                Transfer to third parties
+            </h4>
+            <input type="checkbox" name="data" id="sharing" value="Data Transfer"><label for="sharing">Data Transfers</label><br />
+            <small><i>Allow websties to transfer your personal data to other companies that decide themselves how to use the data.</i></small><br />
+            <input type="checkbox" name="data" id="sales" value="Data Sales"><label for="sales">Data Sales</label><br />
+            <small><i>Allow websties to sell your personal data.</i></small><br />
+        </div>
+        
+        <div class="set" name="place-of-processing">
+            <h4 class="subtitle"> 
+                Place of processing
+            </h4>
+            <input type="checkbox" name="data" id="sw" value="Switzerland"><label for="sw">Switzerland</label><br />
+            <small><i>Allow websties to only process your personal data in Switzerland.</i></small><br />
+            <input type="checkbox" name="data" id="se" value="Switzerland and Europe"><label for="se">Switzerland and Europe</label><br />
+            <small><i>Allow websties to only process your personal data in Switzerland and in the EEA.</i></small><br />
+            <input type="checkbox" name="data" id="euro" value="Europe"><label for="euro">Europe</label><br />
+            <small><i>Allow websties to only process your personal data in the EEA and in Switzerland.</i></small><br />
+            <input type="checkbox" name="data" id="ww" value="Worldwide"><label for="ww">Worldwide</label><br />
+            <small><i>Allow websties to also process your personal data outside of Switzerland and the EEA.</i></small><br />
+        </div>
+            
+        <div id="status"></div>
+        <button id="Save" type="button" style="width: 250px;border:none; padding:9px;box-shadow: 1px 1px 5px grey;background-color: #78bca3;border-radius: 0px;position:relative;margin: auto">
+            Save My Preference
+        </button><br />
+
+        <script src="options.js"></script>
+
+    </body>
+
+</html>
+
+
+

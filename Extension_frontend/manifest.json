@@ -1,0 +1,21 @@
+  {
+    "name": "Privacy Icon",
+    "version": "1.1",
+    "description": "Display the privacy policies in a smart way.",
+    "options_page": "options.html",
+	  "permissions": ["declarativeContent","activeTab","storage","tabs","<all_urls>","https://ppi.ifi.uzh.ch/"],
+
+	
+  	"browser_action": {
+    	"default_icon": "cropped-favicon-32x32.png",
+      "default_popup": "popup.html",
+      "default_title": "ShowIcon"
+  	},
+    "background": {
+      "scripts": ["background.js", "jquery-2.2.js" ],
+      "persistent": true
+    },
+    
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
+  }
